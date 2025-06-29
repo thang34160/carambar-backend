@@ -7,6 +7,12 @@ const blagueRoutes = require('./routes/blagueRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+// Autorise les requêtes depuis ton frontend
+app.use(cors({
+    origin: "https://carambar-frontend.onrender.com"
+}));
+
 // Middlewares
 app.use(helmet());
 app.use(cors());
