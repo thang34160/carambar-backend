@@ -5,13 +5,16 @@ const { sequelize } = require('./models');
 const blagueRoutes = require('./routes/blagueRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 
 // Autorise les requêtes depuis ton frontend
 app.use(cors({
-    origin: "https://carambar-frontend.onrender.com"
+    origin: "https://carambar-backend-3k1g.onrender.com",
+    credentials: true
 }));
+
+
 
 // Middlewares
 app.use(helmet());
